@@ -4,16 +4,8 @@ import Control.Arrow ((&&&))
 value :: Int
 value = 28123
 
--- behzad.nouri stack overflow
 divisors :: Integral a => a -> [a]
-divisors n = foldr (go . (head &&& length)) [1] . group $ fac n 2
-    where
-    go (_, 0) xs = xs
-    go (p, k) xs = let ys = map (* p) xs in go (p, pred k) ys ++ xs
-    fac n i
-        | n < i * i      = [n | n /= 1]
-        | n `mod` i == 0 = i: fac (n `div` i) i
-        | otherwise      = fac n $ succ i
+divisors n = [x | x <- [1..n - 1], n `mod` x == 0]
 
 isAbundant :: Integral a => a -> Bool
 isAbundant n = sum (tail $ divisors n) > n
