@@ -10,4 +10,4 @@ digitPowerSum n
 
 main :: IO ()
 main = do
-    print $ filter (\ n -> digitPowerSum n == n) [2..1000000]
+    print $ sum $ filter (\ n -> digitPowerSum n == n) [2..1000000]
