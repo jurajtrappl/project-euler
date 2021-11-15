@@ -1,6 +1,3 @@
-import Data.List (group)
-import Control.Arrow ((&&&))
-
 value :: Int
 value = 28123
 
