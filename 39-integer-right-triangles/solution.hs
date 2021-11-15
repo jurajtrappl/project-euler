@@ -1,4 +1,4 @@
-import Data.List (group , sort)
+import Data.List (group, sort)
 
 summedPythTriplets :: [Int]
 summedPythTriplets = [a + b + c | (a, b, c) <- [(x, y, z) | x <- [1..1000],
